@@ -1,0 +1,13 @@
+{{page-title "Index"}}
+
+<GeneralContainer>
+    {{#each this.model as |product|}}
+        <Product @product={{product}}/>
+    {{/each}}
+</GeneralContainer>
+
+<footer class="navigation">
+    <LinkTo @route="page" @model={{2}}>
+        <button class="btn btn-info" type="button">next page</button>
+    </LinkTo>
+</footer>

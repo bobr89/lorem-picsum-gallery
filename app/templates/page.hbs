@@ -1,0 +1,21 @@
+{{page-title "Page"}}
+
+<GeneralContainer>
+    {{!-- this is page {{this.model.current_page}} --}}
+
+    {{#each this.model.data as |product|}}
+        <Product @product={{product}}/>
+    {{/each}}
+</GeneralContainer>
+
+<footer class="navigation">
+    {{#if this.model.previous_page}}
+        <LinkTo @route="page" @model={{this.model.previous_page}}>
+            <button class="btn btn-info" type="button">previous page</button>
+        </LinkTo>
+    {{/if}}
+
+    <LinkTo @route="page" @model={{this.model.next_page}}>
+        <button class="btn btn-info" type="button">next page</button>
+    </LinkTo>
+</footer>

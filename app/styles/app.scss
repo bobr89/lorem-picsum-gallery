@@ -1,0 +1,27 @@
+@import './homepage';
+@import './product';
+
+.ember-application {
+    .product-thumbnail {
+        padding: 10px;
+    }
+    
+    .navigation {
+        display: flex;
+        justify-content: center;
+
+        .btn {
+            margin: 10px;
+        }
+    }
+}
+
+.align-items-center {
+    position: relative;
+    margin-bottom: 10px;
+
+    .btn {
+        position: absolute;
+        right: 0;
+    }
+}

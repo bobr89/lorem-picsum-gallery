@@ -1,0 +1,33 @@
+<div class="product-details">
+    <section>
+        <h3 data-test-author-name class="author">{{@author}}</h3>
+    </section>
+
+    <section>
+        {{#if (eq @size "small")}}
+            <p class="font-weight-bold">{{currency 50}}</p>
+        {{else if (eq @size "medium")}}
+            <p class="font-weight-bold">{{currency 100}}</p>
+        {{else if (eq @size "large")}}
+            <p class="font-weight-bold">{{currency 150}}</p>
+        {{else if (eq @size "xlarge")}}
+            <p class="font-weight-bold">{{currency 200}}</p>
+        {{/if}}
+
+        <div class="d-flex justify-content-between align-items-end">
+            <div>
+                <h5>Size</h5>
+                <div class="product-sizes active-{{@size}}">
+                    <span data-test-size class="product-size size-small" {{on "click" (fn @onChangeSize "small")}}>S</span>
+                    <span class="product-size size-medium" {{on "click" (fn @onChangeSize "medium")}}>M</span>
+                    <span class="product-size size-large" {{on "click" (fn @onChangeSize "large")}}>L</span>
+                    <span class="product-size size-xlarge" {{on "click" (fn @onChangeSize "xlarge")}}>XL</span>
+                </div>
+            </div>
+            <button data-test-add-to-cart class="btn btn-info" type="button" {{on "click" this.addToCart}}>
+                <i class="fa fa-shopping-cart mr-1"></i>
+                Add to cart
+            </button>
+        </div>
+    </section>
+</div>

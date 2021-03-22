@@ -1,0 +1,14 @@
+{{page-title "Item"}}
+
+<GeneralContainer>
+    <div class="product {{if this.isZoomed 'is-zoomed'}}">
+        <Product::Image @src={{this.model.download_url}} @toggleZoom={{this.toggleZoom}}/>
+        <Product::Details 
+            @id={{this.model.id}}
+            @author={{this.model.author}} 
+            @size={{this.size}} 
+            @download_url={{this.model.download_url}} 
+            @image={{this.model.image}} 
+            @onChangeSize={{this.onChangeSize}}/>
+    </div>
+</GeneralContainer>
